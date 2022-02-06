@@ -5,78 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <script src="js-file.js" defer></script>
 </head>
 <body>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    <div id="wins">Wins: 0</div>
+    <div id="loses">Loses: 0</div>
+    <div id="endResult"></div>
     <script>
 
-        function computerPlays() {
+        // function computerPlays() {
             
-            const randomInt = Math.floor(Math.random()*3)
+        //     const randomInt = Math.floor(Math.random()*3)
 
-            if (randomInt === 1) {
-                return "rock";
-            } else if (randomInt === 2) {
-                return "paper";
-            } else {
-                return "scissors";
-            }
+        //     if (randomInt === 1) {
+        //         return "rock";
+        //     } else if (randomInt === 2) {
+        //         return "paper";
+        //     } else {
+        //         return "scissors";
+        //     }
             
-        }
+        // }
 
-        function playRound(playerSelection, computerSelection=computerPlays()) {
+        // function playRound(playerSelection, computerSelection=computerPlays()) {
 
-            playerSelection = playerSelection.toLowerCase()
+        //     playerSelection = playerSelection.toLowerCase()
 
-            switch(playerSelection) {
-                case "rock": 
-                    if (computerSelection === "rock") {
-                        console.log("Tie! Rock matches rock.\nRestarting round.");
-                        playRound(prompt("Rock, Paper, or Scissors?"));
-                    } else if (computerSelection === "paper"){
-                        return ["You lose! Paper beats rock.", "lose"];
-                    } else if (computerSelection === "scissors") {
-                        return ["You win! Rock beats scissors.", "win"];
-                    }
-                case "paper": 
-                    if (computerSelection === "rock") {
-                        return ["You win! Paper beats rock.", "win"];
-                    } else if (computerSelection === "paper"){
-                        console.log("Tie! Paper matches paper.\nRestarting round.");
-                        playRound(prompt("Rock, Paper, or Scissors?"));
-                    } else if (computerSelection === "scissors") {
-                        return ["You lose. Scissors beats paper.", "lose"];
-                    }
-                case "scissors": 
-                    if (computerSelection === "rock") {
-                        return ["You lose. Rock beats scissors.", "lose"];
-                    } else if (computerSelection === "paper"){
-                        return ["You win! Scissors beats paper.", "win"];
-                    } else if (computerSelection === "scissors") {
-                        console.log("Tie! Scissors matches scissors.\nRestarting round.");
-                        playRound(prompt("Rock, Paper, or Scissors?"));
-                    }
-            }
-        }
+        //     switch(playerSelection) {
+        //         case "rock": 
+        //             if (computerSelection === "rock") {
+        //                 console.log("Tie! Rock matches rock.\nRestarting round.");
+        //                 playRound(prompt("Rock, Paper, or Scissors?"));
+        //             } else if (computerSelection === "paper"){
+        //                 return ["You lose! Paper beats rock.", "lose"];
+        //             } else if (computerSelection === "scissors") {
+        //                 return ["You win! Rock beats scissors.", "win"];
+        //             }
+        //         case "paper": 
+        //             if (computerSelection === "rock") {
+        //                 return ["You win! Paper beats rock.", "win"];
+        //             } else if (computerSelection === "paper"){
+        //                 console.log("Tie! Paper matches paper.\nRestarting round.");
+        //                 playRound(prompt("Rock, Paper, or Scissors?"));
+        //             } else if (computerSelection === "scissors") {
+        //                 return ["You lose. Scissors beats paper.", "lose"];
+        //             }
+        //         case "scissors": 
+        //             if (computerSelection === "rock") {
+        //                 return ["You lose. Rock beats scissors.", "lose"];
+        //             } else if (computerSelection === "paper"){
+        //                 return ["You win! Scissors beats paper.", "win"];
+        //             } else if (computerSelection === "scissors") {
+        //                 console.log("Tie! Scissors matches scissors.\nRestarting round.");
+        //                 playRound(prompt("Rock, Paper, or Scissors?"));
+        //             }
+        //     }
+        // }
 
-        function game() {
+        // function game() {
 
-            let winCount = 0;
-            let loseCount = 0;
+        //     let winCount = 0;
+        //     let loseCount = 0;
 
-            for (let i = 0; i <= 5; i++) {
-                let roundResult = playRound(prompt("Rock, Paper, or Scissors?"));
-                console.log(roundResult[0]);
-                (roundResult[1] == "win") ? winCount+=1 : loseCount+=1;
-                if (winCount == 3 || loseCount == 3) {
-                    break;
-                }
-            }
+        //     for (let i = 0; i <= 5; i++) {
+        //         let roundResult = playRound(prompt("Rock, Paper, or Scissors?"));
+        //         console.log(roundResult[0]);
+        //         (roundResult[1] == "win") ? winCount+=1 : loseCount+=1;
+        //         if (winCount == 3 || loseCount == 3) {
+        //             break;
+        //         }
+        //     }
             
-            winCount > loseCount ? console.log(`Wins: ${winCount}\nLoses: ${loseCount}\nYou won the best of five!`) :
-                                console.log(`Wins: ${winCount}\nLoses: ${loseCount}\nYou lost the best of five!`);
+        //     winCount > loseCount ? console.log(`Wins: ${winCount}\nLoses: ${loseCount}\nYou won the best of five!`) :
+        //                         console.log(`Wins: ${winCount}\nLoses: ${loseCount}\nYou lost the best of five!`);
 
-        }
-        game();
+        // }
+        // game();
 
     </script>
 </body>
